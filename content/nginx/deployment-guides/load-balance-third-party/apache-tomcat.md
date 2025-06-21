@@ -695,7 +695,7 @@ For information about customizing health checks, see the [NGINX Plus Admin Gui
 <span id="live-activity-monitoring"></span>
 ### Enabling Live Activity Monitoring
 
-NGINX Plus includes a live activity monitoring interface that provides key load and real-time performance metrics, including TCP metrics in <span style="white-space: nowrap;">NGINX Plus R6</span> and later. Statistics are reported through a RESTful JSON interface, making it easy to integrate with custom or third‑party monitoring tools. There is also a built‑in dashboard. Follow these instructions to deploy it.
+NGINX Plus includes a live activity monitoring interface that provides key load and real-time performance metrics, including TCP metrics. Statistics are reported through a RESTful JSON interface, making it easy to integrate with custom or third‑party monitoring tools. There is also a built‑in dashboard. Follow these instructions to deploy it.
 
 <img src="/nginx/images/nginx-plus-dashboard-r19-overview.png" alt="Dashboard tab in NGINX Plus live activity monitoring dashboard" style="border:2px solid #666666; padding:2px; margin:2px;" />
 
