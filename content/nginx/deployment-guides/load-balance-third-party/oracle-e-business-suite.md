@@ -710,7 +710,7 @@ You can include multiple `error_log` and `access_log` directives in the same con
 <span id="live-activity-monitoring"></span>
 #### Configuring Live Activity Monitoring
 
-NGINX Plus includes a live activity monitoring interface that provides key load and performance metrics in real time, including TCP metrics in <span style="white-space: nowrap;">NGINX Plus R6</span> and later. Statistics are reported through a RESTful JSON interface, making it very easy to feed the data to a custom or third‑party monitoring tool. There is also a built‑in dashboard. Follow these instructions to deploy it.
+NGINX Plus includes a live activity monitoring interface that provides key load and performance metrics in real time, including TCP metrics. Statistics are reported through a RESTful JSON interface, making it very easy to feed the data to a custom or third‑party monitoring tool. There is also a built‑in dashboard. Follow these instructions to deploy it.
 
 <img src="/nginx/images/nginx-plus-dashboard-r19-overview.png" alt="Dashboard tab in NGINX Plus live activity monitoring dashboard" style="border:2px solid #666666; padding:2px; margin:2px;" />
 
@@ -961,7 +961,7 @@ http {
             root /usr/share/nginx/html;
         }
 
-        # Redirect requests made to the pre-R14 dashboard.
+        # Redirect requests made to the old dashboard URL.
         location = /status.html {
             return 301 /dashboard.html;
         }
@@ -1152,7 +1152,7 @@ http {
             root /usr/share/nginx/html;
         }
 
-        # Redirect requests made to the pre-R14 dashboard.
+        # Redirect requests made to the old dashboard URL.
         location = /status.html {
             return 301 /dashboard.html;
         }
