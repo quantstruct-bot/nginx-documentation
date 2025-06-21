@@ -79,6 +79,8 @@ These archetypes are adapted from some existing [templates](/templates/): please
 
 There are multiple ways to format text: for consistency and clarity, these are our conventions:
 
+- **Anchors for in-page links**: Do **not** use raw HTML `<a name=...>` tags to create anchors. Instead, use Hugo's Markdown header anchor syntax, e.g. `# Header Title {#custom-anchor}`. This ensures compatibility and consistency across the documentation.
+
 - Bold: Two asterisks on each side - `**Bolded text**`.
 - Italic: One underscore on each side - `_Italicized text_`.
 - Unordered lists: One dash - `- Unordered list item`.
