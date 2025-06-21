@@ -1,6 +1,6 @@
 ---
 # We use sentence case and present imperative tone
-title: "Review metrics on the NGINX One dashboard"
+title: "Review metrics on NGINX One dashboard"
 # Weights are assigned in increments of 100: determines sorting order
 weight: i00
 # Creates a table of contents and sidebar, useful for large documents
@@ -12,7 +12,7 @@ nd-content-type: how-to
 nd-product: NGINX-One
 ---
 
-After connecting your NGINX instances to NGINX One, you can monitor their performance and health. The NGINX One dashboard is designed for this purpose, offering an easy-to-use interface.
+After connecting your NGINX instances to NGINX One, you can monitor their performance and health. NGINX One dashboard is designed for this purpose, offering an easy-to-use interface.
 
 ### Log in to NGINX One
 
