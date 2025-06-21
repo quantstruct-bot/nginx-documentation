@@ -475,6 +475,11 @@ Starting with NGINX Plus R33, NGINX Plus must report usage data to a reporting e
 
 The [`ssl_verify`](https://nginx.org/en/docs/ngx_mgmt_module.html#ssl_verify) directive in the [`mgmt`](https://nginx.org/en/docs/ngx_mgmt_module.html) block ensures that NGINX Plus connects only to trusted reporting endpoints by validating the server's SSL certificate. The `ssl_verify` directive is set to `on` by default.
 
+{{< important >}}
+**Certificate revocation checking is recommended:**
+Enabling `ssl_verify` ensures that certificates are valid and trusted, but by default, it does **not** check whether a certificate has been revoked (for example, due to compromise or mis-issuance). To prevent acceptance of revoked certificates, it is a best practice—especially in production environments—to enable certificate revocation checking using Certificate Revocation Lists (CRL) or the Online Certificate Status Protocol (OCSP). For more information and configuration details, see the NGINX documentation on [ssl_crl](https://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_crl) and [ssl_ocsp](https://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_ocsp).
+{{< /important >}}
+
 ### Why `ssl_verify` is important
 
 When `ssl_verify` is enabled:
