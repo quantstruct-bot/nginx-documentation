@@ -30,11 +30,29 @@ You can get the URL through our internal communication channels: it will be repr
 
 To create closed content, add the closed repository as a remote to the main repository, then fetch.
 
+**Note:** The internal repository must have a `main` branch for the following steps to work. If it does not, contact your repository administrator.
+
 ```shell
 cd documentation
 git remote add internal git@github.com:<closed-url>.git
 git fetch --all
 ```
+
+If you encounter an error such as:
+
+```
+error: pathspec 'internal/main' did not match any file(s) known to git
+```
+
+Try the following troubleshooting steps:
+
+1. Run `git branch -r` to list all remote branches and verify that `internal/main` is present.
+2. If `internal/main` is not listed, ensure that the internal repository has a `main` branch and that you have access to it.
+3. If the branch exists remotely but not locally, you can create a local branch tracking the remote branch with:
+   ```shell
+   git fetch internal
+   git checkout -b internal/main internal/main
+   ```
 
 Check out the remote `main` branch, and use it to create a feature branch. **Ensure that you prefix all branch names with `internal/`**
 
@@ -65,3 +83,13 @@ git push origin
 ```
 
 Once the content changes have been merged in the open repository, they will synchronize back to the closed repository.
+
+## Troubleshooting
+
+### Error: pathspec 'internal/main' did not match any file(s) known to git
+
+This error typically means that the `main` branch does not exist in the internal repository, or it has not been fetched. See the troubleshooting steps above after the `git fetch --all` command.
+
+### About remote tracking branches
+
+In Git, remote tracking branches (like `internal/main`) represent the state of branches in your remote repositories. If you haven't fetched the latest branches, or if the branch doesn't exist on the remote, you may encounter errors when trying to check them out. Always ensure you have fetched the latest changes and that the branch exists on the remote before attempting to check it out locally.
